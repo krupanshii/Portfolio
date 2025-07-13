@@ -162,8 +162,8 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <motion.a
-              href="/resume.pdf"
-              download="Ayush_Thakkar_Resume.pdf"
+              href="/Krupanshi Resume.pdf"
+              download="Krupanshi_Patel_Resume.pdf"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-8 py-3 rounded-full hover:scale-105 transition-transform duration-300 flex items-center gap-2"
