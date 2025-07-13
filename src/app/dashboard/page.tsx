@@ -4,16 +4,19 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { BarChart3, Users, Mail, TrendingUp, Calendar } from "lucide-react"
 
+interface Contact {
+  id: string
+  name: string
+  email: string
+  message: string
+  timestamp: string
+}
+
 interface DashboardStats {
   totalContacts: number
   thisMonth: number
   thisWeek: number
-  recentContacts: Array<{
-    id: string
-    name: string
-    email: string
-    timestamp: string
-  }>
+  recentContacts: Contact[]
 }
 
 export default function Dashboard() {
@@ -23,6 +26,7 @@ export default function Dashboard() {
     thisWeek: 0,
     recentContacts: [],
   })
+
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -32,14 +36,18 @@ export default function Dashboard() {
         const data = await response.json()
 
         if (data.success) {
-          const contacts = data.contacts
+          const contacts: Contact[] = data.contacts
           const now = new Date()
           const oneWeekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000)
           const oneMonthAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000)
 
-          const thisWeek = contacts.filter((contact: any) => new Date(contact.timestamp) > oneWeekAgo).length
+          const thisWeek = contacts.filter(
+            (contact) => new Date(contact.timestamp) > oneWeekAgo
+          ).length
 
-          const thisMonth = contacts.filter((contact: any) => new Date(contact.timestamp) > oneMonthAgo).length
+          const thisMonth = contacts.filter(
+            (contact) => new Date(contact.timestamp) > oneMonthAgo
+          ).length
 
           setStats({
             totalContacts: contacts.length,

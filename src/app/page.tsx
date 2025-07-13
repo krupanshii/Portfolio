@@ -151,7 +151,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto"
           >
-            "Turning data into decisions." Passionate about extracting insights from data and building intelligent
+            &quot;Turning data into decisions.&quot; Passionate about extracting insights from data and building intelligent
             systems that solve real-world problems.
           </motion.p>
 
@@ -778,7 +778,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-              Let's Connect
+              Let&apos;s Connect
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 mx-auto mb-4"></div>
             <p className="text-gray-300 max-w-2xl mx-auto">
